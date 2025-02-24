@@ -12,6 +12,9 @@ body {
     background-color: #ffffff;
     color: #333333;
     transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 body.dark-theme {
@@ -81,6 +84,7 @@ header h1 {
     padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
+    flex-grow: 1;
 }
 
 .content {
@@ -95,9 +99,10 @@ header h1 {
 
 /* Footer Styling */
 footer {
-    text-align: center;
+    text-align: left;
     padding: 20px;
     background-color: transparent;
     color: inherit;
-    margin-top: 40px;
+    margin-top: auto;
+    padding-left: 20px;
 }
