@@ -45,9 +45,11 @@
             if (document.body.classList.contains('dark-theme')) {
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('fa-sun');
+                document.documentElement.setAttribute('data-theme', 'dark');
             } else {
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
+                document.documentElement.setAttribute('data-theme', 'light');
             }
         });
     </script>

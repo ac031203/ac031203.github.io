@@ -24,9 +24,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #1a1a1a;
-    color: white;
+    padding: 20px;
+    background-color: transparent;
+    color: inherit;
 }
 
 header h1 {
@@ -41,7 +41,7 @@ header h1 {
 }
 
 .nav-link {
-    color: white;
+    color: inherit;
     font-size: 16px;
     transition: color 0.3s ease;
 }
@@ -56,7 +56,7 @@ header h1 {
 }
 
 .social-icons a {
-    color: white;
+    color: inherit;
     font-size: 1.5rem;
     transition: color 0.3s ease;
 }
@@ -68,7 +68,7 @@ header h1 {
 .theme-toggle {
     background: none;
     border: none;
-    color: white;
+    color: inherit;
     cursor: pointer;
     font-size: 1.5rem;
 }
@@ -97,7 +97,7 @@ header h1 {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #1a1a1a;
-    color: white;
+    background-color: transparent;
+    color: inherit;
     margin-top: 40px;
 }
