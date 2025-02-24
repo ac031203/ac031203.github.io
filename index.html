@@ -9,7 +9,7 @@
 </head>
 <body>
     <header class="header">
-        <h1>Akshat Chaudhary</h1>
+        <a href="./" class="header-name"><h1>Akshat Chaudhary</h1></a>
         <div class="header-right">
             <nav>
                 <a href="#" class="nav-link">Blog</a>
@@ -45,11 +45,9 @@
             if (document.body.classList.contains('dark-theme')) {
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('fa-sun');
-                document.documentElement.setAttribute('data-theme', 'dark');
             } else {
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
-                document.documentElement.setAttribute('data-theme', 'light');
             }
         });
     </script>
