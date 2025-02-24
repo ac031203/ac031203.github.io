@@ -46,3 +46,22 @@ nav a:hover {
     cursor: pointer;
     font-size: 18px;
 }
+
+/* Container Styling */
+.container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    flex-direction: row-reverse; /* This will move the image to the right */
+}
+
+.content {
+    max-width: 600px;
+}
+
+.profile-photo img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
