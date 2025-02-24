@@ -1,8 +1,22 @@
 /* General Reset */
-body, h1, nav, a {
+body, h1, h2, p, nav, a {
     margin: 0;
     padding: 0;
     text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #ffffff;
 }
 
 /* Header Styling */
@@ -15,45 +29,58 @@ header {
     color: white;
 }
 
-/* Header Left (Name) */
-.header-left h1 {
+header h1 {
     font-size: 24px;
     font-weight: bold;
 }
 
-/* Header Right (Navigation) */
 .header-right {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
-nav a {
+.nav-link {
     color: white;
     font-size: 16px;
     transition: color 0.3s ease;
 }
 
-nav a:hover {
+.nav-link:hover {
     color: #cccccc;
 }
 
-/* Theme Toggle Button */
-#theme-toggle {
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #cccccc;
+}
+
+.theme-toggle {
     background: none;
     border: none;
     color: white;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 1.5rem;
 }
 
 /* Container Styling */
 .container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    padding: 20px;
-    flex-direction: row-reverse; /* This will move the image to the right */
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .content {
@@ -61,7 +88,16 @@ nav a:hover {
 }
 
 .profile-photo img {
-    width: 200px;
+    width: 250px;
     height: auto;
     border-radius: 10px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: white;
+    margin-top: 40px;
 }
