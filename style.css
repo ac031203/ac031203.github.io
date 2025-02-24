@@ -93,26 +93,46 @@ header h1 {
 /* Container Styling */
 .container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Align items to the top */
-    gap: 40px;
-    padding: 40px 20px;
-    max-width: 1200px;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 60px 20px;
+    max-width: 900px;
     margin: 0 auto;
-    flex-grow: 1;
-}
-
-.content {
-    max-width: 600px;
-    text-align: left;
 }
 
 .profile-photo img {
-    width: 250px;
+    width: 250px;  /* Adjusted size */
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    box-shadow: none; /* Remove excessive shadow */
 }
+
+.content {
+    max-width: 500px;
+    text-align: left;
+}
+
+.content h2 {
+    font-size: 28px; /* Bigger name */
+    font-weight: bold;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.content a {
+    color: #0077cc; /* Blue for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
 
 /* Footer Styling */
 footer {
