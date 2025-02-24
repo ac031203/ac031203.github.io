@@ -1,71 +1,48 @@
 /* General Reset */
-* {
+body, h1, nav, a {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
 }
 
-/* Light Theme */
-body {
-    background-color: #f8f8f8;
-    color: #333;
-    transition: background 0.4s ease, color 0.4s ease;
-}
-
-/* Dark Theme */
-.dark-theme {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-/* Header */
+/* Header Styling */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background: transparent;
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/* Header Left (Name) */
+.header-left h1 {
     font-size: 24px;
     font-weight: bold;
 }
 
-#theme-toggle {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
+/* Header Right (Navigation) */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    font-size: 16px;
     transition: color 0.3s ease;
 }
 
-.dark-theme #theme-toggle {
-    color: #ffcc00;
+nav a:hover {
+    color: #cccccc;
 }
 
-/* Container */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Profile Photo */
-.profile-photo img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #555;
-    margin-bottom: 20px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
+/* Theme Toggle Button */
+#theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
 }
