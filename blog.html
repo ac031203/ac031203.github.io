@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshat Chaudhary | Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <a href="./" class="header-name"><h1>Akshat Chaudhary</h1></a>
+        <div class="header-right">
+            <nav>
+                <a href="./blog.html" class="nav-link">Blog</a>
+            </nav>
+            <div class="social-icons">
+                <a href="https://github.com/ac031203" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/akshat-chaudhary-13b038223/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <button id="theme-toggle" class="theme-toggle">
+                <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+    <div class="blog-container">
+        <h2>Blog</h2>
+        <div class="blog-list">
+            <div class="blog-entry">
+                <h3><a href="#">Some notes on C(PP)</a></h3>
+                <p class="blog-date">Jul 6, 2024</p>
+            </div>
+            <div class="blog-entry">
+                <h3><a href="#">The Package Merge Algorithm</a></h3>
+                <p class="blog-date">Jul 6, 2024</p>
+            </div>
+            <div class="blog-entry">
+                <h3><a href="#">LLMs for parsing unstructured data (IIT Course Planner v2!)</a></h3>
+                <p class="blog-date">Jan 12, 2024</p>
+            </div>
+            <div class="blog-entry">
+                <h3><a href="#">Lost in Japan: A Travelogue Part 1</a></h3>
+                <p class="blog-date">Dec 15, 2023</p>
+            </div>
+            <div class="blog-entry">
+                <h3><a href="#">Rollerball Debrief</a></h3>
+                <p class="blog-date">Dec 8, 2023</p>
+            </div>
+            <div class="blog-entry">
+                <h3><a href="#">Luck, Skill or Both: Department Change at IITs</a></h3>
+                <p class="blog-date">Sep 1, 2023</p>
+            </div>
+            <div class="blog-entry">
+                <h3><a href="#">Intern Ashes</a></h3>
+                <p class="blog-date">Aug 15, 2023</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Akshat Chaudhary</p>
+    </footer>
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            if (document.body.classList.contains('dark-theme')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+    </script>
+</body>
+</html>
