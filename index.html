@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+        }
+        .header h1 {
+            margin: 0;
+        }
         .header-right {
             display: flex;
             align-items: center;
@@ -18,25 +29,37 @@
         }
         .social-icons a {
             font-size: 1.5rem;
-            color: black;
+            color: white;
             text-decoration: none;
+        }
+        .profile-photo img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .content {
+            max-width: 600px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-left">
-            <h1>Akshat Chaudhary</h1>
-        </div>
+    <header class="header">
+        <h1>Akshat Chaudhary</h1>
         <div class="header-right">
             <nav>
-                <a href="#">Blog</a>
+                <a href="#" style="color: white;">Blog</a>
             </nav>
             <div class="social-icons">
                 <a href="https://github.com/ac031203" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/akshat-chaudhary-13b038223/" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
-            <button id="theme-toggle">
+            <button id="theme-toggle" style="background: none; border: none; color: white; cursor: pointer;">
                 <i id="theme-icon" class="fas fa-moon"></i>
             </button>
         </div>
@@ -52,7 +75,7 @@
         </div>
     </div>
     <footer>
-        <p>&copy; 2024 Akshat Chaudhary</p>
+        <p style="text-align: center;">&copy; 2024 Akshat Chaudhary</p>
     </footer>
     <script>
         const toggleButton = document.getElementById('theme-toggle');
