@@ -1,13 +1,50 @@
 title: Akshat Chaudhary
-email: akshat0312.iitd@gmail.com
-description: >-
-  Your personal site description here
-baseurl: ""
-url: "https://akshatchaudhary.github.io"
-twitter_username: AkshatChaudha13 # Optional
-github_username:  ac031203  # Optional
+description: My Personal Webpage
+url: "https://ac031203.github.io"
 
-# Build settings
-theme: minima
+# Minimal Mistakes theme settings
+minimal_mistakes_skin: default # Options: default, dark, solarized, solarized-dark, etc.
+theme: minimal-mistakes-jekyll
+
+author:
+  avatar: /assets/images/profile.jpg
+  bio: "Math Geek"
+  location: "New Delhi, India"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/ac031203"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/akshat-chaudhary-13b038223/"
+
+# Navigation
+navigation:
+  - text: "Home"
+    url: /
+  - text: "About"
+    url: /about/
+  - text: "Blog"
+    url: /blog/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+
+# Plugins
 plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
   - jekyll-feed
+
+# Pagination
+paginate: 5
+paginate_path: /blog/page:num/

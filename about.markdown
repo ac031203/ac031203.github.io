@@ -1,7 +1,7 @@
 ---
-layout: page
-title: About
-permalink: /about/
+title: "About"
+layout: single
+author_profile: true
 ---
 
 # About Me
