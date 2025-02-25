@@ -1,0 +1,13 @@
+title: Akshat Chaudhary
+email: akshat0312.iitd@gmail.com
+description: >-
+  Your personal site description here
+baseurl: ""
+url: "https://akshatchaudhary.github.io"
+twitter_username: AkshatChaudha13 # Optional
+github_username:  ac031203  # Optional
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
