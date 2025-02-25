@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Trust the Process!"
-date:   2025-02-26 12:00:00 -0500
+date:   2025-02-26
 categories: blog personal
 ---
 
