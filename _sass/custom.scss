@@ -1,0 +1,40 @@
+body.dark {
+    background-color: #121212;
+    color: #ffffff;
+  
+    a {
+      color: #bb86fc;
+    }
+  
+    h1, h2, h3, h4, h5, h6 {
+      color: #ffffff;
+    }
+  
+    .page__footer {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+  
+    .masthead {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+  
+    .btn {
+      background-color: #333333;
+      color: #ffffff;
+    }
+  }
+  
+  #theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.5rem;
+    color: inherit;
+  
+    i {
+      transition: opacity 0.3s ease;
+    }
+  }

@@ -2,11 +2,8 @@ title: Akshat Chaudhary
 description: My Personal Webpage
 url: "https://ac031203.github.io"
 
-# Minimal Mistakes theme settings
-minimal_mistakes_skin: dark
+minimal_mistakes_skin: default
 remote_theme: mmistakes/minimal-mistakes
-
-
 
 author:
   avatar: /assets/images/profile.jpg
@@ -20,7 +17,6 @@ author:
       icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/in/akshat-chaudhary-13b038223/"
 
-# Navigation
 navigation:
   - text: "Home"
     url: /
@@ -29,7 +25,6 @@ navigation:
   - text: "Blog"
     url: /blog/
 
-# Defaults
 defaults:
   - scope:
       path: ""
@@ -41,13 +36,11 @@ defaults:
       share: true
       related: true
 
-# Plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-remote-theme
 
-# Pagination
 paginate: 5
 paginate_path: /blog/page:num/

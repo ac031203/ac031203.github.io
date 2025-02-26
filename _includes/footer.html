@@ -19,11 +19,3 @@
 </div>
 
 <div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} <a href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title }}</a>. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
-
-<button id="theme-toggle">Toggle Dark Mode</button>
-<script>
-  const toggleButton = document.getElementById('theme-toggle');
-  toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-  });
-</script>

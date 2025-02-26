@@ -1,8 +1,56 @@
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
+body.dark {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
 }
 
-body.dark-mode a {
-    color: #bb86fc;
+a {
+    color: #9f7aea; /* Softer purple for links */
 }
+
+a:hover {
+    color: #d6bcfa;
+}
+body.dark .fa-github {
+    color: #cfcfcf !important;
+    opacity: 1 !important;
+}
+
+
+body.dark .page__footer {
+    background-color: #121212;
+    color: #cfcfcf;
+}
+
+body.dark .page__footer a {
+    color: #9f7aea;
+}
+
+body.dark .page__footer a:hover {
+    color: #d6bcfa;
+}
+
+body.dark .masthead {
+    background-color: #1e1e1e !important; /* Ensure dark theme */
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+
+body.dark .site-title {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
+
+body.dark .masthead input[type="search"] {
+    background-color: #1e1e1e !important;
+    border: none !important;
+    color: #ffffff !important;
+}
+
+body.dark .masthead input[type="search"]::placeholder {
+    color: #cfcfcf !important;
+}
+
