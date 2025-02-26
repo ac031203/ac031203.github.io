@@ -4,7 +4,8 @@ url: "https://ac031203.github.io"
 
 # Minimal Mistakes theme settings
 minimal_mistakes_skin: default # Options: default, dark, solarized, solarized-dark, etc.
-remote_theme: mmistakes/minimal-mistakes
+theme: minimal-mistakes-jekyll
+
 
 
 author:
