@@ -4,7 +4,7 @@ url: "https://ac031203.github.io"
 
 # Minimal Mistakes theme settings
 minimal_mistakes_skin: default # Options: default, dark, solarized, solarized-dark, etc.
-theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes
 
 
 
@@ -46,6 +46,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-remote-theme
 
 # Pagination
 paginate: 5

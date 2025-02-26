@@ -280,6 +280,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-remote-theme
   minimal-mistakes-jekyll
   webrick (~> 1.7)
 
