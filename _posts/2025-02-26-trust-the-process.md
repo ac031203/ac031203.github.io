@@ -5,116 +5,79 @@ categories: blog personal
 tags: [Personal, Internship]
 ---
 
-# Welcome to my First Ever Blog!
+Welcome to my first ever blog!
 
-This blog is something special and very close to my heart. As the title suggests, it's about internships!
+This blog is gonna be something special and very close to my heart, it's about internships!
 
 I will divide this into two parts: firstly, my personal experience, and second, some suggestions and tips for juniors.
 
-## Context
+### Context 
 
-For those unfamiliar with the internship process in our college (which is similar in many other colleges), a variety of companies visit our campus, including tech, consulting, finance, and more. Each company has its own recruitment process. I will focus mainly on tech and finance-based companies.
+For those who are not familiar with the internship process in our college (which is similar in many colleges): a variety of companies visit our campus, be it tech, consult, finance, etc. Each company has its own recruitment procedures, but I will focus mostly on tech/finance-based companies. These firms typically have 2-3 stages of screening: resume shortlisting, online coding assessments (OA), and interviews. Some companies may also conduct a Group Discussion (GD) round, but this is uncommon for tech-based firms. 
 
-These firms typically have two to three stages of screening:
-1. **Resume Screening**
-2. **Online Coding Assessments (OA)** - These usually require coding 3-4 problems in around an hour (varies from company to company). Most candidates prepare from platforms like Leetcode (LC), CodeForces (CF), etc.
-3. **Interviews** - Some companies also conduct a Group Discussion (GD), though it's uncommon for tech roles.
+For coding, one has to be familiar with basic-to-advanced Data Structures & Algorithms (DSA). The OA generally consists of 3-4 problems to be solved in around an hour (varies from company to company). Many students practice from platforms like Leetcode (LC) and CodeForces (CF).
 
-### High-Frequency Trading (HFT) Firms
+A side note: Finance-based firms, especially High-Frequency Trading (HFT) firms, are a different breed altogether. These companies develop trading strategies and trade in financial markets using advanced math and programming, often executing trades in microseconds. They are referred to as "Quant firms" and are among the highest-paying companies globally. Broadly, these firms have two roles: Quant Researcher (QR) and Quant Developer (QD). QR roles focus on mathematical modeling and strategy design, while QD roles focus on developing high-performance trading infrastructure. To crack a QR role, one needs a strong grasp of probability and mathematics.
 
-A special mention to finance-based firms known as **HFTs (High-Frequency Trading firms)**. These companies develop trading strategies to trade in financial markets using heavy mathematics and programming, often executing trades in microseconds! They are among the highest-paying firms in the world.
+Being passionate about mathematics since childhood, I was naturally drawn to the QR role (not to mention the high pay, jk). I targeted top international HFT firms like Optiver and Da Vinci, especially because of their Amsterdam-based offices (a little travel dream, xD).
 
-These firms generally have two types of roles:
-- **Quant Researcher (QR)**: Focuses on developing trading strategies using math and statistics (math-intensive role).
-- **Quant Developer (QD)**: Works on building trading infrastructure for executing fast trades (coding-intensive role).
+### Preparation Phase
 
-For QR roles, math and probability questions are common. [A more detailed post on HFTs to be out soon!]
+In the summer of '24, I wasn't doing any internship or project and had just started preparing for the OA rounds. I rigorously practiced coding, solving problems for hours each day on CF & LC, often managing only 3-4 problems daily. This intense routine reminded me of my JEE preparation days—endless hours on the same chair and desk, isolated from my family, solely focused on coding.
 
-As someone who has loved Mathematics since childhood and majored in it, I was intrigued by the QR role (not to mention the high pay—just kidding!). Among the 5-10 HFT firms visiting our campus, I was particularly targeting international ones like Optiver and Da Vinci (Amsterdam was another motivation, xD).
+Initially, my momentum was strong, but I soon hit a plateau, particularly struggling with advanced concepts like Graphs and DP. Around this time, I came across a free "3-day Graph Camp" conducted by a CF "Master" (referred to as MKV Sir) via IITD notices. Attending the camp turned out to be a game-changer—it made complex topics feel effortless. Impressed, I enrolled in the full 2-month paid course that covered all relevant DSA topics for OA rounds.
 
-### Some Key Dates
-- **23rd July 2024** - New semester begins
-- **3rd August 2024** - Day 1 of interviews
+Simultaneously, I prepared for QR roles by solving quant puzzles and studying probability intensively. Despite my efforts, my CF rating stagnated, which was frustrating. A long discussion with MKV Sir made me realize that rating wasn’t my ultimate goal—cracking OA rounds was. This shift in mindset helped me focus better. Around this time, I partnered with a friend to practice quant puzzles and coding problems daily.
 
----
+For the QR roles, I specifically trained for the "80 in 8" test format used by some HFTs—solving 80 arithmetic questions in 8 minutes! This intense preparation continued from May until early July.
 
-## My Personal Experience
+### The Process & Shortlists
 
-### Summer '24 - The Preparation Phase
+As mid-July approached, so did my anxiety. OA rounds started around the 16th, with most tests happening after the 23rd (when the semester began). To avoid distractions, I decided to travel back to campus early, on the 13th.
 
-I wasn’t doing any internship or project that summer and had just started preparing for the OA rounds. I began grinding on CF & LC, solving problems for hours each day. It was a mentally exhausting yet fulfilling process, reminiscent of my JEE prep days—sitting at my desk for long hours, coding or doing random tasks.
+My initial OAs, including those for Google and Microsoft, went decently. The first QR tests (Ebullient, Millennium, etc.) also went well. However, the period leading up to Day 1 was relentless—back-to-back tests, sometimes three in a single day. The toughest day was when both my dream companies, Optiver and Da Vinci, had their OAs scheduled back-to-back. Exhausted, I underperformed and failed to qualify for either. The rejection was disheartening, but a friend’s advice to focus on other companies helped me move forward.
 
-Initially, my preparation had good momentum, but over time, I felt a lack of motivation, especially as my CF rating was not improving significantly. I realized I was struggling with advanced topics like Graphs and DP. Fortunately, I found a free **3-day Graph Camp** by a CF master (whom I’ll refer to as MKV Sir) on our IITD notices.
+Over the next few days, I faced more disappointments. Despite performing exceptionally well in Citadel Securities and another top Indian quant firm’s tests, I wasn’t shortlisted. By early August, just days before Day 1, I had zero shortlists and was feeling defeated. But as they say, "Sabar ka fal meetha hota hai"—patience pays off. Within a few days, I received over 10 shortlists, including Google, which was a huge morale booster.
 
-This camp was a game-changer! Graphs, which once seemed complex, became so intuitive. Encouraged by this experience, I enrolled in his **paid 2-month course** covering all DSA topics relevant to OA and interviews. Attending lectures and solving practice problems, I saw a lot of improvement.
+For Day 1, I had six shortlists, along with their interview times (Relevant for next part):
+- Google (11 AM)
+- Eightfold.AI (Afternoon)
+- American Express (Afternoon)
+- Goldman Sachs (8 AM)
+- Ebullient Securities (Afternoon)
+- NK Securities (Afternoon)
 
-Alongside this, I was also preparing for **quant puzzles and probability** for QR assessments. However, my obsession with CF rating continued, and I was getting frustrated at not achieving the **Specialist** rank despite doing well in course-organized contests. At this point, I had a **one-hour call with MKV Sir**, who advised me:
+### The Big Day & Aftermath
 
-> *"Rating pe dhyaan mat do, Akshat."* [Don't focus on the rating.]
+On August 3rd, the big day arrived. I wore formals for the first time, feeling both nervous and confident. My first interview (Goldman Sachs) started poorly—I struggled with an easy coding problem and blanked out. As expected, I wasn’t called for the next round.
 
-This struck me—I was chasing something unnecessary when my real goal was to crack the OA rounds. I then partnered with a friend, and we spent two hours daily solving quant puzzles and discussing coding problems.
+The Google interview was next. It went smoothly, and I was shortlisted for Round 2, which also went well. Unlike other companies, Google didn’t have a third round, and results would be posted directly on the portal. I moved on to my next interview (Eightfold.AI), which also went well.
 
-I was particularly targeting two HFTs with a unique **“80 in 8”** test format—80 arithmetic questions in 8 minutes! So, I practiced extensively for this, demonstrating my deep desire for these roles. From May to early July, it was an all-day coding/math grind.
+Later, while waiting, I checked my portal and found...
 
----
+![Google Offer]({{ "/assets/images/google-offer.jpg" | relative_url }})
 
-## The Process & Shortlists
 
-Mid-July arrived, and so did my anxiety. The **OA rounds** were about to start!
+The excitement was surreal! I immediately called my family and shared the good news. But the day wasn’t over yet. I got a call for my Ebullient Securities interview, a role I was even more passionate about.
 
-The new semester began on **23rd July**, with tests scheduled from **16th/17th July** onwards. Until the 23rd, these could be taken remotely, but after that, all assessments and interviews were offline. Wanting to avoid disruptions, I **returned to campus early on 13th July**.
+Walking in confidently, I found my interviewer was an IITD alumnus. The questions were challenging, but I answered them well, particularly impressing him with my approach to a probability problem. The atmosphere became friendlier, and we even discussed regression concepts casually. After the interview, I received another call—**I had cleared the first round!**
 
-I took OA rounds for **Google, Microsoft, Ebullient, Millennium**, and other firms. Some went well, others not so much. The pace was **exhausting**, especially from **27th-28th July**, when I had **3-4 tests per day**.
+The second round focused on market-making concepts and behavioral questions. It was trickier, but I managed to perform well. After another anxious wait, I received the final call...
 
-### Major Setbacks
+![EbS Offer]({{ "/assets/images/ebs-offer.jpg" | relative_url }})
 
-My **dream companies—Optiver and Da Vinci—had their tests on the same day**! On top of that, I had another test before them, making it **three tests in a single day**. I was drained by the time I reached Optiver’s test, messed up a section, and struggled in Da Vinci’s test as well. **I didn’t qualify for either.** 😞
 
-Further disappointment followed when I didn’t make it through **Citadel Securities and another Indian quant firm**, despite finishing both their tests early.
+This was my dream job, my top preference! The feeling was indescribable. From having zero shortlists to securing my dream quant offer, the journey was nothing short of a rollercoaster.
 
-With **Day 1 (3rd August)** approaching and **zero shortlists**, I was disheartened. **Was my two-month grind all for nothing?**
+### Takeaways & Tips for Juniors
 
-### The Turnaround: Shortlists Start Rolling In!
+1. **Focus on learning, not just ratings.** CF/LC ratings don’t determine success—your problem-solving ability does.
+2. **Be strategic with your preparation.** Identify weak areas early and work on them (e.g., my Graph Camp experience).
+3. **Don’t get disheartened by rejections.** You only need one offer that aligns with your goals.
+4. **Practice company-specific test formats.** If applying for QR roles, practice speed math rigorously.
+5. **Have a support system.** Discuss problems with friends, seek mentorship, and stay positive.
 
-Finally, on **1st August**, I got **my first SL from Google!** 🎉 This was a major confidence booster. Soon after, more SLs came in, and I ended up with **10+ SLs, including 6 for Day 1!**
+This was my journey—hope it helps and inspires some of you. Until next time!
 
-Day 1 SLs:
-- **Tech:** Google, Eightfold.AI, Amex
-- **Quant:** Goldman Sachs, Ebullient Securities, NK Securities
-
----
-
-## The Day & Aftermath
-
-### **The Big Day - 3rd August**
-
-I woke up early, suited up for the first time ever, and headed to LHC for my **8 AM interview with Goldman Sachs**. Nervous but determined, I walked into the room.
-
-Unfortunately, the interview didn’t go well. I **blanked out** on an easy coding question, struggled with a follow-up brain teaser, and realized my interview was significantly shorter than others. **I wasn’t called for the next round.** 😞
-
-Not losing hope, I moved on to my **Google interview at 11 AM**. This went much smoother, and I cleared both rounds. I was told that the results would be posted later.
-
-In the afternoon, I had my **Eightfold.AI** interview, followed by **Ebullient Securities**, one of my top choices. The Ebullient interviewer was an IITD alumnus, and the session focused on **probability problems and brainteasers**, which I **aced**.
-
-### **The Big Reveal**
-
-After my Google interview, I checked my portal, and there it was...
-
-**💥 Google Offer Letter!**
-
-I was ecstatic! I immediately called my parents and sister, who were super proud. 🎉 But I didn’t stop there—soon after, **I received a call from Ebullient for further rounds**. I walked in confidently, nailed the interview, and soon...
-
-**🎯 I secured an offer from Ebullient Securities!**
-
-It was a **dream come true!** After all the struggles, rejections, and intense preparation, everything finally fell into place.
-
----
-
-## Conclusion
-
-Internship season is tough—full of uncertainties, self-doubt, and long hours of preparation. But **resilience is key**. Even after setbacks, patience and perseverance can lead to great outcomes. To all my juniors:
-
-**Stay focused, stay motivated, and trust the process!** 🚀
-
-More detailed posts on **HFT firms, quant prep, and internship strategies** coming soon!
+**Coming soon: A detailed post on HFT firms!** 🚀
 
