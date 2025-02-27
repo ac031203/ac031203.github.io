@@ -4,7 +4,8 @@ url: "https://ac031203.github.io"
 
 minimal_mistakes_skin: default
 remote_theme: mmistakes/minimal-mistakes
-
+sass:
+  sass_dir: _sass
 author:
   avatar: /assets/images/profile.jpg
   bio: "Math Geek"
