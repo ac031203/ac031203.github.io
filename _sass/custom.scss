@@ -1,40 +1,138 @@
 body.dark {
-    background-color: #121212;
+  background-color: #121212;
+  color: #ffffff;
+
+  a {
+    color: #bb86fc;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
     color: #ffffff;
-  
-    a {
-      color: #bb86fc;
+  }
+
+  .page__footer {
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+
+  .masthead {
+    background-color: #1e1e1e; // Dark header background
+    color: #ffffff; // Light header text
+
+    .greedy-nav {
+      background-color: #1e1e1e; // Dark navigation background
     }
-  
-    h1, h2, h3, h4, h5, h6 {
-      color: #ffffff;
+
+    .site-title {
+      color: #ffffff; // Light site title
     }
-  
-    .page__footer {
-      background-color: #1e1e1e;
-      color: #ffffff;
+
+    .visible-links a {
+      color: #ffffff; // Light navigation links
     }
-  
-    .masthead {
-      background-color: #1e1e1e;
-      color: #ffffff;
-    }
-  
-    .btn {
-      background-color: #333333;
-      color: #ffffff;
+
+    #theme-toggle {
+      color: #ffffff; // Light theme toggle button
     }
   }
-  
-  #theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    font-size: 1.5rem;
-    color: inherit;
-  
+
+  .btn {
+    background-color: #333333;
+    color: #ffffff;
+  }
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.5rem;
+  color: inherit;
+
+  i {
+    transition: opacity 0.3s ease;
+  }
+}
+
+.theme-switch {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 40px; // Adjust the size as needed
+  height: 40px; // Adjust the size as needed
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; // Makes it round
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1); // Light hover effect
+  }
+
+  .theme-switch-icons {
+    position: relative;
+    width: 24px; // Icon size
+    height: 24px; // Icon size
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     i {
-      transition: opacity 0.3s ease;
+      position: absolute;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      font-size: 18px; // Adjust icon size
+    }
+
+    .fa-moon {
+      color: #ffffff; // Moon icon color
+    }
+
+    .fa-sun {
+      color: #ffeb3b; // Sun icon color
     }
   }
+}
+
+body.dark .theme-switch {
+  .fa-moon {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+
+  .fa-sun {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+body:not(.dark) .theme-switch {
+  .fa-moon {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  .fa-sun {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+}
+
+body:not(.dark) #theme-toggle {
+  color: #333; /* Dark color for visibility in light mode */
+}
+
+body:not(.dark) .theme-switch {
+  background-color: #f0f0f0; /* Light gray background */
+  border: 1px solid #ccc; /* Visible border */
+}
+
+body:not(.dark) .theme-switch .fa-moon {
+  color: #333; /* Dark moon icon */
+}
+
+body:not(.dark) .theme-switch .fa-sun {
+  color: #ffcc00; /* Yellow sun icon */
+}
