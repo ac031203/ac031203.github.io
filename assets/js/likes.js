@@ -1,78 +1,65 @@
-const GITHUB_REPO = "ac031203/ac031203.github.io"; // Your GitHub repo
-const ISSUE_NUMBER = 2; // Replace with the issue number for likes
-const GITHUB_TOKEN = process.env.PERSONAL_ACCESS_TOKEN_1; // Securely access the token
-
-if (!GITHUB_TOKEN) {
-    console.error("Error: GitHub token is missing. Set the environment variable PERSONAL_ACCESS_TOKEN_1.");
-}
+const GITHUB_REPO = "ac031203/ac031203.github.io";
+const ISSUE_NUMBER = 2; // Ensure this is correct
 
 async function fetchLikeCount() {
     const url = `https://api.github.com/repos/${GITHUB_REPO}/issues/${ISSUE_NUMBER}/comments`;
 
     try {
-        const response = await fetch(url, {
-            headers: {
-                "Authorization": `token ${GITHUB_TOKEN}`,
-                "Accept": "application/vnd.github.v3+json"
-            }
-        });
-
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`GitHub API Error: ${response.status} ${response.statusText}`);
+        
         const comments = await response.json();
+        console.log("Fetched Comments:", comments);  // Debugging
+        
         let likeComment = comments.find(comment => comment.body.startsWith("Likes:"));
-        let likes = likeComment ? parseInt(likeComment.body.split(":")[1].trim(), 10) : 0;
+        let likes = likeComment ? parseInt(likeComment.body.split(":")[1].trim()) : 0;
 
         document.getElementById("like-count").textContent = likes;
 
+        document.getElementById("like-icon").addEventListener("click", async () => {
+            await updateLikeCount(likes + 1, likeComment ? likeComment.id : null);
+        });
     } catch (error) {
         console.error("Error fetching likes:", error);
     }
 }
 
-async function updateLikeCount() {
-    const url = `https://api.github.com/repos/${GITHUB_REPO}/issues/${ISSUE_NUMBER}/comments`;
+async function updateLikeCount(newLikes, commentId) {
+    const url = commentId
+        ? `https://api.github.com/repos/${GITHUB_REPO}/issues/comments/${commentId}`
+        : `https://api.github.com/repos/${GITHUB_REPO}/issues/${ISSUE_NUMBER}/comments`;
 
-    try {
-        const response = await fetch(url, {
-            headers: {
-                "Authorization": `token ${GITHUB_TOKEN}`,
-                "Accept": "application/vnd.github.v3+json"
-            }
-        });
+    const method = commentId ? "PATCH" : "POST";
+    const token = await getToken();
 
-        const comments = await response.json();
-        let likeComment = comments.find(comment => comment.body.startsWith("Likes:"));
-        let likes = likeComment ? parseInt(likeComment.body.split(":")[1].trim(), 10) : 0;
-        let newLikes = likes + 1;
+    const response = await fetch(url, {
+        method: method,
+        headers: {
+            "Authorization": `token ${token}`,
+            "Accept": "application/vnd.github.v3+json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ body: `Likes: ${newLikes}` })
+    });
 
-        // Update the UI immediately
+    if (!response.ok) {
+        console.error("Failed to update likes:", await response.text());
+    } else {
         document.getElementById("like-count").textContent = newLikes;
-        document.getElementById("like-icon").style.color = "red";
-
-        const apiUrl = likeComment
-            ? `https://api.github.com/repos/${GITHUB_REPO}/issues/comments/${likeComment.id}`
-            : url;
-
-        const method = likeComment ? "PATCH" : "POST";
-
-        await fetch(apiUrl, {
-            method: method,
-            headers: {
-                "Authorization": `token ${GITHUB_TOKEN}`,
-                "Accept": "application/vnd.github.v3+json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                body: `Likes: ${newLikes}`
-            })
-        });
-
-    } catch (error) {
-        console.error("Error updating likes:", error);
     }
 }
 
-// Add event listener for like button
-document.addEventListener("DOMContentLoaded", function () {
-    fetchLikeCount();
-    document.getElementById("like-container").addEventListener("click", updateLikeCount);
-});
+// Function to get token dynamically
+async function getToken() {
+    try {
+        const response = await fetch("/assets/js/token.js");
+        const data = await response.json();
+        return data.token;
+    } catch (error) {
+        console.error("Error fetching token:", error);
+        return null;
+    }
+}
+
+// Run on page load
+fetchLikeCount();
