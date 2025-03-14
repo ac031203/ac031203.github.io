@@ -1,7 +1,6 @@
 const GITHUB_REPO = "ac031203/ac031203.github.io"; // Your GitHub repo
 const ISSUE_NUMBER = 1; // Issue number for storing views
 const GITHUB_TOKEN = process.env.PERSONAL_ACCESS_TOKEN_1; // Securely access the token
-//const GITHUB_TOKEN = "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"; // TEMP for local testing
 
 if (!GITHUB_TOKEN) {
     console.error("Error: GitHub token is missing. Set the environment variable PERSONAL_ACCESS_TOKEN_1.");

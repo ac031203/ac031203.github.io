@@ -1,6 +1,5 @@
 const GITHUB_REPO = "ac031203/ac031203.github.io"; // Your GitHub repo
 const ISSUE_NUMBER = 2; // Replace with the issue number for likes
-//const GITHUB_TOKEN = "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"; // TEMP for local testing
 const GITHUB_TOKEN = process.env.PERSONAL_ACCESS_TOKEN_1; // Securely access the token
 
 if (!GITHUB_TOKEN) {
