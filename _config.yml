@@ -37,6 +37,9 @@ defaults:
       share: true
       related: true
 
+comments:
+  provider: "utterances"
+  
 plugins:
   - jekyll-paginate
   - jekyll-sitemap

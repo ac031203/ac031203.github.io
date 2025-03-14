@@ -3,6 +3,7 @@ title:  "Trust the Process!"
 date:   2025-02-26
 permalink : /blog/trust-the-process/
 categories: blog personal
+comments: true
 tags: [Personal, Internship]
 ---
 

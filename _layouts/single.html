@@ -58,7 +58,15 @@ layout: default
         {% endif %}
         {% include page__taxonomy.html %}
         {% include page__date.html %}
+        <span id="busuanzi_container_page_pv">
+            <i class="fas fa-eye"></i> <span id="busuanzi_value_page_pv"></span> views
+        </span>
+        <span id="like-container" style="margin-left: 15px; cursor: pointer;">
+            <i class="fas fa-heart" id="like-icon" style="color: gray;"></i>
+            <span id="like-count">0</span> Likes
+        </span>
       </footer>
+
 
       {% if page.share %}{% include social-share.html %}{% endif %}
 

@@ -8,6 +8,33 @@
     {% include head.html %}
     {% include head/custom.html %}
   </head>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const likeIcon = document.getElementById("like-icon");
+        const likeCount = document.getElementById("like-count");
+        const postKey = window.location.pathname; // Unique key per post
+
+        // Load likes from localStorage
+        let likes = localStorage.getItem(postKey) || 0;
+        likeCount.textContent = likes;
+
+        // Change color if already liked
+        if (localStorage.getItem(postKey + "_liked") === "true") {
+            likeIcon.style.color = "red";
+        }
+
+        document.getElementById("like-container").addEventListener("click", function () {
+            if (localStorage.getItem(postKey + "_liked") !== "true") {
+                likes++;
+                localStorage.setItem(postKey, likes);
+                localStorage.setItem(postKey + "_liked", "true");
+                likeIcon.style.color = "red";
+                likeCount.textContent = likes;
+            }
+        });
+    });
+  </script>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
     {% include skip-links.html %}
