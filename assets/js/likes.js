@@ -1,16 +1,23 @@
-const GITHUB_REPO = "ac031203/ac031203.github.io";
-const ISSUE_NUMBER = 2; // Ensure this is correct
+async function getToken() {
+    return "{{ site.github.secret.PERSONAL_ACCESS_TOKEN_1 }}";
+}
 
 async function fetchLikeCount() {
-    const url = `https://api.github.com/repos/${GITHUB_REPO}/issues/${ISSUE_NUMBER}/comments`;
+    const url = `https://api.github.com/repos/${GITHUB_REPO}/issues/${ISSUE_NUMBER_LIKES}/comments`;
 
     try {
-        const response = await fetch(url);
+        const token = await getToken();
+        if (!token) throw new Error("Missing GitHub token");
+
+        const response = await fetch(url, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+
         if (!response.ok) throw new Error(`GitHub API Error: ${response.status} ${response.statusText}`);
-        
+
         const comments = await response.json();
-        console.log("Fetched Comments:", comments);  // Debugging
-        
+        console.log("Fetched Comments:", comments);
+
         let likeComment = comments.find(comment => comment.body.startsWith("Likes:"));
         let likes = likeComment ? parseInt(likeComment.body.split(":")[1].trim()) : 0;
 
@@ -27,15 +34,19 @@ async function fetchLikeCount() {
 async function updateLikeCount(newLikes, commentId) {
     const url = commentId
         ? `https://api.github.com/repos/${GITHUB_REPO}/issues/comments/${commentId}`
-        : `https://api.github.com/repos/${GITHUB_REPO}/issues/${ISSUE_NUMBER}/comments`;
+        : `https://api.github.com/repos/${GITHUB_REPO}/issues/${ISSUE_NUMBER_LIKES}/comments`;
 
     const method = commentId ? "PATCH" : "POST";
     const token = await getToken();
+    if (!token) {
+        console.error("Failed to get token for updating likes.");
+        return;
+    }
 
     const response = await fetch(url, {
         method: method,
         headers: {
-            "Authorization": `token ${token}`,
+            "Authorization": `Bearer ${token}`,
             "Accept": "application/vnd.github.v3+json",
             "Content-Type": "application/json"
         },
@@ -49,17 +60,4 @@ async function updateLikeCount(newLikes, commentId) {
     }
 }
 
-// Function to get token dynamically
-async function getToken() {
-    try {
-        const response = await fetch("/assets/js/token.js");
-        const data = await response.json();
-        return data.token;
-    } catch (error) {
-        console.error("Error fetching token:", error);
-        return null;
-    }
-}
-
-// Run on page load
 fetchLikeCount();
