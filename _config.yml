@@ -38,7 +38,7 @@ defaults:
       related: true
 
 comments:
-  provider: "utterances"
+  provider: "custom"
 
 plugins:
   - jekyll-paginate
