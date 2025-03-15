@@ -2,7 +2,7 @@
     let GITHUB_USERNAME = "ac031203";
     let REPO_NAME = "ac031203.github.io";
     let ISSUE_NUMBER_LIKES = 2;
-    let GH_TOKEN = "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";  // 🔴 Replace with a valid GitHub token
+    let GH_TOKEN = "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";  // 🔴 Replace with a valid GitHub token
 
     async function fetchLikeCount() {
         try {
