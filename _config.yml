@@ -39,12 +39,18 @@ defaults:
 
 comments:
   provider: "utterances"
-  
+
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-remote-theme
+  - jekyll-redirect-from
+
+collections:
+  api:
+    output: true
+    permalink: /api/:name.json
 
 paginate: 5
 paginate_path: /blog/page:num/

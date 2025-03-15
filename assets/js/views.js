@@ -1,61 +1,36 @@
-async function getToken() {
-    return "{{ site.github.secret.PERSONAL_ACCESS_TOKEN_1 }}";
-}
+const GITHUB_USERNAME = "ac031203";
+const REPO_NAME = "ac031203.github.io";
+const ISSUE_NUMBER = 1;
 
 async function fetchViewCount() {
-    const url = `https://api.github.com/repos/${GITHUB_REPO}/issues/${ISSUE_NUMBER_VIEWS}/comments`;
-
     try {
-        const token = await getToken();
-        if (!token) throw new Error("Missing GitHub token");
-
-        const response = await fetch(url, {
-            headers: { Authorization: `Bearer ${token}` }
-        });
-
-        if (!response.ok) throw new Error(`GitHub API Error: ${response.status} ${response.statusText}`);
-
-        const comments = await response.json();
-        console.log("Fetched Comments:", comments);
-
-        let viewComment = comments.find(comment => comment.body.startsWith("Views:"));
-        let views = viewComment ? parseInt(viewComment.body.split(":")[1].trim()) : 0;
-
-        document.getElementById("view-count").textContent = views;
-
-        await updateViewCount(views + 1, viewComment ? viewComment.id : null);
+        const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/issues/${ISSUE_NUMBER}`);
+        const data = await response.json();
+        const count = data.body.match(/\d+/) ? parseInt(data.body.match(/\d+/)[0]) : 0;
+        document.getElementById("view-count").textContent = count;
     } catch (error) {
-        console.error("Error fetching views:", error);
+        console.error("Error fetching view count:", error);
     }
 }
 
-async function updateViewCount(newViews, commentId) {
-    const url = commentId
-        ? `https://api.github.com/repos/${GITHUB_REPO}/issues/comments/${commentId}`
-        : `https://api.github.com/repos/${GITHUB_REPO}/issues/${ISSUE_NUMBER_VIEWS}/comments`;
-
-    const method = commentId ? "PATCH" : "POST";
-    const token = await getToken();
-    if (!token) {
-        console.error("Failed to get token for updating views.");
-        return;
-    }
-
-    const response = await fetch(url, {
-        method: method,
-        headers: {
-            "Authorization": `Bearer ${token}`,
-            "Accept": "application/vnd.github.v3+json",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ body: `Views: ${newViews}` })
-    });
-
-    if (!response.ok) {
-        console.error("Failed to update views:", await response.text());
-    } else {
-        document.getElementById("view-count").textContent = newViews;
+async function updateViewCount() {
+    try {
+        await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/dispatches`, {
+            method: "POST",
+            headers: {
+                "Accept": "application/vnd.github.everest-preview+json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                event_type: "update-views",
+                client_payload: { issue: ISSUE_NUMBER }
+            })
+        });
+        setTimeout(fetchViewCount, 3000);  // Fetch new count after 3 seconds
+    } catch (error) {
+        console.error("Error updating view count:", error);
     }
 }
 
 fetchViewCount();
+updateViewCount();
