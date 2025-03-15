@@ -54,3 +54,20 @@ body.dark .masthead input[type="search"]::placeholder {
     color: #cfcfcf !important;
 }
 
+.post-tags {
+    margin: 10px 0;
+  }
+  
+  .tag {
+    display: inline-block;
+    background: #f2f2f2;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .tag:hover {
+    background: #ddd;
+  }

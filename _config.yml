@@ -8,15 +8,19 @@ sass:
   sass_dir: _sass
 author:
   avatar: /assets/images/profile.jpg
-  bio: "Math Geek"
+  bio: "Math Geek | Finance Enthusiast"
   location: "New Delhi, India"
   links:
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "mailto:akshat0312.iitd@gmail.com"
     - label: "GitHub"
       icon: "fab fa-github"
       url: "https://github.com/ac031203"
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/in/akshat-chaudhary-13b038223/"
+
 
 navigation:
   - text: "Home"
@@ -25,6 +29,8 @@ navigation:
     url: /about/
   - text: "Blog"
     url: /blog/
+  - text: "Tags"
+    url: /tags/
 
 defaults:
   - scope:
@@ -46,8 +52,20 @@ plugins:
   - jekyll-feed
   - jekyll-remote-theme
   - jekyll-redirect-from
+  - jekyll-archives
+
+jekyll-archives:
+  enabled:
+    - tags
+  layouts:
+    tag: archive-tag
+  permalinks:
+    tag: /tags/:name/
 
 collections:
+  pages:
+    output: true
+    permalink: /:path/
   api:
     output: true
     permalink: /api/:name.json
