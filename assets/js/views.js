@@ -2,10 +2,13 @@
     let GITHUB_USERNAME = "ac031203";
     let REPO_NAME = "ac031203.github.io";
     let ISSUE_NUMBER = 1;
+    let GH_TOKEN = "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";  // 🔴 Replace with a valid GitHub token
 
     async function fetchViewCount() {
         try {
-            let response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/issues/${ISSUE_NUMBER}`);
+            let response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/issues/${ISSUE_NUMBER}`, {
+                headers: { "Authorization": `token ${GH_TOKEN}` }
+            });
             let data = await response.json();
             let count = data.body && data.body.match(/\d+/) ? parseInt(data.body.match(/\d+/)[0]) : 0;
             document.getElementById("view-count").textContent = count;
@@ -20,6 +23,7 @@
                 method: "POST",
                 headers: {
                     "Accept": "application/vnd.github.everest-preview+json",
+                    "Authorization": `token ${GH_TOKEN}`,
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
