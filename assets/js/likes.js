@@ -1,43 +1,78 @@
-(async function() {
-    let GITHUB_USERNAME = "ac031203";
-    let REPO_NAME = "ac031203.github.io";
-    let ISSUE_NUMBER_LIKES = 2;
-    let GH_TOKEN = "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";  // 🔴 Replace with a valid GitHub token
-
-    async function fetchLikeCount() {
+document.addEventListener("DOMContentLoaded", function() {
+    (async function() {
+      const likeContainer = document.getElementById("like-container");
+      const likeIcon = document.getElementById("like-icon");
+  
+      // Get the likesIssue from the hidden HTML element
+      const likesIssueElement = document.getElementById("likes-issue");
+  
+      if (!likesIssueElement) {
+        console.error("likes-issue element not found!");
+        return;
+      }
+  
+      const likesIssue = parseInt(likesIssueElement.textContent);
+  
+      async function fetchLikeCount() {
         try {
-            let response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/issues/${ISSUE_NUMBER_LIKES}`, {
-                headers: { "Authorization": `token ${GH_TOKEN}` }
-            });
-            let data = await response.json();
-            let count = data.body && data.body.match(/\d+/) ? parseInt(data.body.match(/\d+/)[0]) : 0;
-            document.getElementById("like-count").textContent = count;
+          let response = await fetch(`https://backend-server-rosy-theta.vercel.app/api/get-like-count`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ issue: likesIssue })
+          });
+          let data = await response.json();
+          let count = data.count || 0;
+          document.getElementById("like-count").textContent = count;
         } catch (error) {
-            console.error("Error fetching like count:", error);
+          console.error("Error fetching like count:", error);
         }
-    }
-
-    async function updateLikeCount() {
+      }
+  
+      async function updateLikeCount() {
         try {
-            let response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/dispatches`, {
-                method: "POST",
-                headers: {
-                    "Accept": "application/vnd.github.everest-preview+json",
-                    "Authorization": `token ${GH_TOKEN}`,
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    event_type: "update-likes",
-                    client_payload: { issue: ISSUE_NUMBER_LIKES }
-                })
-            });
-            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-            setTimeout(fetchLikeCount, 3000);
+          // Check if the user has already liked the post
+          if (localStorage.getItem("liked") === "true") {
+            console.log("You have already liked this post.");
+            return;
+          }
+  
+          let response = await fetch(`https://backend-server-rosy-theta.vercel.app/api/update-like-count`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ issue: likesIssue })
+          });
+          if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+  
+          // Mark the post as liked
+          localStorage.setItem("liked", "true");
+  
+          // Change the like button color to red
+          likeIcon.style.color = "red";
+  
+          console.log("Like count updated successfully");
+          setTimeout(fetchLikeCount, 3000);
         } catch (error) {
-            console.error("Error updating like count:", error);
+          console.error("Error updating like count:", error);
         }
-    }
-
-    document.getElementById("like-container").addEventListener("click", updateLikeCount);
-    fetchLikeCount();
-})();
+      }
+  
+      // Ensure the like-container element exists
+      if (likeContainer) {
+        likeContainer.addEventListener("click", updateLikeCount);
+        console.log("Like container found and event listener added.");
+      } else {
+        console.error("Like container not found!");
+      }
+  
+      // Check if the user has already liked the post
+      if (localStorage.getItem("liked") === "true") {
+        likeIcon.style.color = "red";
+      }
+  
+      fetchLikeCount();
+    })();
+  });

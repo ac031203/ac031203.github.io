@@ -16,7 +16,7 @@ jobs:
         run: |
           ISSUE_NUMBER=${{ github.event.client_payload.issue }}
           API_URL="https://api.github.com/repos/${{ github.repository }}/issues/$ISSUE_NUMBER"
-          CURRENT_BODY=$(curl -s -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN_1 }}" $API_URL | jq -r '.body')
+          CURRENT_BODY=$(curl -s -H "Authorization: token ${{ secrets.GH_TOKEN }}" $API_URL | jq -r '.body')
           COUNT=$(echo "$CURRENT_BODY" | grep -o '[0-9]\+' | head -n 1)
           if [[ -z "$COUNT" ]]; then COUNT=0; fi
           NEW_COUNT=$((COUNT + 1))
@@ -26,7 +26,7 @@ jobs:
         run: |
           ISSUE_NUMBER=${{ github.event.client_payload.issue }}
           API_URL="https://api.github.com/repos/${{ github.repository }}/issues/$ISSUE_NUMBER"
-          curl -X PATCH -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN_1 }}" \
+          curl -X PATCH -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
                -H "Accept: application/vnd.github.v3+json" \
                $API_URL \
                -d "{\"body\": \"$NEW_COUNT\"}"

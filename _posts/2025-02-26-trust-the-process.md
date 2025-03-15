@@ -5,6 +5,9 @@ permalink : /blog/trust-the-process/
 categories: blog personal
 comments: true
 tags: [Personal, Internship]
+viewsIssue: 1
+likesIssue: 2
+layout: single
 ---
 
 Welcome to my first ever blog!
