@@ -45,7 +45,9 @@ defaults:
 
 comments:
   provider: "custom"
-
+  enable_in_dev: true
+  
+mathjax: true
 plugins:
   - jekyll-paginate
   - jekyll-sitemap

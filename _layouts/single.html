@@ -36,6 +36,12 @@ layout: default
           </h1>
           {%- endif %}
           {% include page__meta.html %}
+          <!-- MathJax Support -->
+          {% if page.mathjax %}
+          <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+          </script>
+          {% endif %}
         </header>
       {% endunless %}
 
@@ -99,7 +105,7 @@ layout: default
     </div>
 
     {% if site.comments.provider and page.comments %}
-      {% if jekyll.environment == 'production' %}
+      {% if jekyll.environment == 'production' or site.comments.enable_in_dev %}
         {% include comments.html %}
       {% else %}
         <p>

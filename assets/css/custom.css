@@ -72,30 +72,138 @@ body.dark .masthead input[type="search"]::placeholder {
     background: #ddd;
   }
 
-  /* Custom styles for Cusdis comments */
+/* Remove scrollbar from Cusdis comments */
+#cusdis_thread {
+    overflow: hidden !important; /* Hide overflow */
+    height: auto !important; /* Allow height to adjust dynamically */
+    border: none !important; /* Remove any border */
+}
+
+#cusdis_thread iframe {
+    overflow: hidden !important; /* Hide overflow in the iframe */
+    border: none !important; /* Remove iframe border */
+    width: 100% !important; /* Ensure iframe takes full width */
+    height: auto !important; /* Allow height to adjust dynamically */
+    min-height: 300px; /* Set a minimum height to avoid collapsing */
+}
+
+/* Hide scrollbar for Cusdis iframe */
+#cusdis_thread iframe {
+    scrollbar-width: none !important; /* For Firefox */
+    -ms-overflow-style: none !important; /* For Internet Explorer and Edge */
+}
+
+#cusdis_thread iframe::-webkit-scrollbar {
+    display: none !important; /* For Chrome, Safari, and Opera */
+}
+/* Custom styles for Cusdis comments */
 .cusdis-container {
-    max-width: 800px; /* Adjust as needed */
-    margin: 0 auto; /* Center the comments section */
-    padding: 20px;
+    max-width: 800px !important; /* Adjust as needed */
+    margin: 0 auto !important; /* Center the comments section */
+    padding: 20px !important;
+    background-color: transparent !important; /* Match your site's background */
+    border-radius: 8px !important; /* Rounded corners */
 }
 
-.cusdis-comments {
-    overflow-y: auto;
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+#cusdis_thread {
+    overflow: hidden !important; /* Remove scroll */
+    padding: 10px !important;
+    background-color: transparent !important; /* Match your site's background */
 }
 
-.cusdis-comments::-webkit-scrollbar {
-    display: none; /* For Chrome, Safari, and Opera */
+/* Style input fields and textarea */
+#cusdis_thread input[type="text"],
+#cusdis_thread input[type="email"],
+#cusdis_thread textarea {
+    width: 100% !important;
+    padding: 10px !important;
+    margin-bottom: 10px !important;
+    border: 1px solid #ddd !important; /* Light border */
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    background-color: #fff !important; /* White background for inputs */
+    color: #333 !important; /* Dark text color */
+}
+
+/* Style the submit button */
+#cusdis_thread button[type="submit"] {
+    padding: 10px 20px !important;
+    background-color: #007bff !important; /* Blue button */
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    transition: background-color 0.3s ease !important; /* Smooth hover effect */
+}
+
+#cusdis_thread button[type="submit"]:hover {
+    background-color: #0056b3 !important; /* Darker blue on hover */
+}
+
+/* Style labels */
+#cusdis_thread label {
+    font-size: 14px !important;
+    color: #333 !important; /* Dark text color */
+    margin-bottom: 5px !important;
+    display: block !important;
 }
 
 /* Dark mode styles */
-[data-theme="dark"] .cusdis-comments input, 
-[data-theme="dark"] .cusdis-comments textarea {
-    color: #ffffff; /* White text color for dark mode */
-    background-color: #333333; /* Dark background for inputs */
+[data-theme="dark"] .cusdis-container {
+    background-color: transparent !important; /* Match dark mode background */
 }
 
-[data-theme="dark"] .cusdis-comments label {
-    color: #ffffff; /* White text color for labels in dark mode */
+[data-theme="dark"] #cusdis_thread input[type="text"],
+[data-theme="dark"] #cusdis_thread input[type="email"],
+[data-theme="dark"] #cusdis_thread textarea {
+    background-color: #444 !important; /* Darker background for inputs */
+    color: #fff !important; /* White text color for dark mode */
+    border-color: #555 !important;
 }
+
+[data-theme="dark"] #cusdis_thread label {
+    color: #fff !important; /* White text color for labels in dark mode */
+}
+
+[data-theme="dark"] #cusdis_thread button[type="submit"] {
+    background-color: #555 !important; /* Darker button in dark mode */
+}
+
+[data-theme="dark"] #cusdis_thread button[type="submit"]:hover {
+    background-color: #777 !important; /* Lighter hover in dark mode */
+}
+
+/* MathJax Reveal CSS */
+.mathjax-reveal {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--text-muted-color, gray);
+  }
+  
+  .mathjax-reveal .reveal-text {
+    display: inline;
+  }
+  
+  .mathjax-reveal .hidden-content {
+    display: none;
+    position: static;
+    color: var(--text-color, inherit);
+    padding: 0.5rem 0;
+  }
+  
+  .mathjax-reveal:hover .reveal-text {
+    display: none;
+  }
+  
+  .mathjax-reveal:hover .hidden-content {
+    display: inline;
+  }
+
+
+
+
+
+
+  
