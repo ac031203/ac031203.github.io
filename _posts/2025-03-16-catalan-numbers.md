@@ -71,7 +71,7 @@ The path first crosses the line at the point \\((2,3)\\), then after that we jus
 Now, I claim an even stronger statement:
 
 _Claim_: Let \\(S\\) denote set of all invalid paths to \\((5,5)\\), and \\(T\\) denote set of all monotonous paths (only right and up moves) from \\((0,0)\\) to \\((4,6)\\) . Then we will have,\\[
-|U| = |V|
+|S| = |T|
 \\]
 
 _Proof_: First of all we represent a path as a string of \\(R\\) and \\(U\\)'s, each of length \\(10\\). Next, we will define a bijective function \\(f: S \to T\\), following the reflection principle we just saw above, i.e.., invert the string (\\(R \leftrightarrow U\\)) immediately after the point when \\(\text{\#}U = \text{\#}R+1\\) in the prefix. Clearly, this function is well-defined as an invalid path is guaranteed to have such a _violation point_ (as shown in the proof before). We now show the injectivity and surjectivity:
