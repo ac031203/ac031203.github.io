@@ -71,3 +71,31 @@ body.dark .masthead input[type="search"]::placeholder {
   .tag:hover {
     background: #ddd;
   }
+
+  /* Custom styles for Cusdis comments */
+.cusdis-container {
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto; /* Center the comments section */
+    padding: 20px;
+}
+
+.cusdis-comments {
+    overflow-y: auto;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.cusdis-comments::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .cusdis-comments input, 
+[data-theme="dark"] .cusdis-comments textarea {
+    color: #ffffff; /* White text color for dark mode */
+    background-color: #333333; /* Dark background for inputs */
+}
+
+[data-theme="dark"] .cusdis-comments label {
+    color: #ffffff; /* White text color for labels in dark mode */
+}
