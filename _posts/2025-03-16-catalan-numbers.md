@@ -70,23 +70,23 @@ The path first crosses the line at the point \\((2,3)\\), then after that we jus
 
 Now, I claim an even stronger statement:
 
-_Claim_: Let \\(U\\) denote set of all invalid paths to \\((5,5)\\), and \\(V\\) denote set of all monotonous paths (only right and up moves) from \\((0,0)\\) to \\((4,6)\\) . Then we will have,\\[
+_Claim_: Let \\(S\\) denote set of all invalid paths to \\((5,5)\\), and \\(T\\) denote set of all monotonous paths (only right and up moves) from \\((0,0)\\) to \\((4,6)\\) . Then we will have,\\[
 |U| = |V|
 \\]
 
-_Proof_: First of all we represent a path as a string of \\(R\\) and \\(U\\)'s, each of length \\(10\\). Next, we will define a bijective function \\(f: U \to V\\), following the reflection principle we just saw above, i.e.., invert the string (\\(R \leftrightarrow U\\)) immediately after the point when \\(\text{\#}U = \text{\#}R+1\\) in the prefix. Clearly, this function is well-defined as an invalid path is guaranteed to have such a _violation point_ (as shown in the proof before). We now show the injectivity and surjectivity:
+_Proof_: First of all we represent a path as a string of \\(R\\) and \\(U\\)'s, each of length \\(10\\). Next, we will define a bijective function \\(f: S \to T\\), following the reflection principle we just saw above, i.e.., invert the string (\\(R \leftrightarrow U\\)) immediately after the point when \\(\text{\#}U = \text{\#}R+1\\) in the prefix. Clearly, this function is well-defined as an invalid path is guaranteed to have such a _violation point_ (as shown in the proof before). We now show the injectivity and surjectivity:
 
 Injectivity is trivial, because if \\(P_1 \ne P_2\\), then clearly, \\(f(P_1) \ne f(P_2)\\) from our construction.
 
-For surjectivity, consider any \\(P \in V\\), if we apply the same function \\(f\\) to \\(P\\), we will now a get a path \\(P' \in U\\) with \\(f(P') = P\\). Since, the destination is \\((4,6)\\), thus it must cross the line \\(y=x\\) at some point because of monotonous paths and hence, \\(\text{\#}U = \text{\#}R+1\\) at some point. Now, since reflection is about \\(y = x+1\\), the destination now becomes \\((5,5)\\). (proof is exactly the same as the previous one), and clearly this is an invalid path. 
+For surjectivity, consider any \\(P \in T\\), if we apply the same function \\(f\\) to \\(P\\), we will now a get a path \\(P' \in S\\) with \\(f(P') = P\\). Since, the destination is \\((4,6)\\), thus it must cross the line \\(y=x\\) at some point because of monotonous paths and hence, \\(\text{\#}U = \text{\#}R+1\\) at some point. Now, since reflection is about \\(y = x+1\\), the destination now becomes \\((5,5)\\). (proof is exactly the same as the previous one), and clearly this is an invalid path. 
 
 Thus, the claim follows from the bijectivity of the sets.           \\(\square\\)
 
-Now, calculating \\(|U|\\) has become a piece of cake, as \\(|V| = \binom{10}{4}\\) (again a direct result). Thus, our desired number of valid paths is nothing but the total number of paths less the number of invalid paths, or \\[
+Now, calculating \\(|S|\\) has become a piece of cake, as \\(|T| = \binom{10}{4}\\) (again a direct result). Thus, our desired number of valid paths is nothing but the total number of paths less the number of invalid paths, or \\[
 \binom{10}{5} - \binom{10}{4} = \frac{1}{6} \binom{10}{5}
 \\]
 
-Getting us our desired result! Now you can see there is nothing special about the point \\((5,5)\\), thus we can generalise this result for valid paths till \\((n,n)\\), where \\(n \in \mathbb{N}\\) to get the general Catalan number: \\[
+Getting us our desired result! Now you can see there is nothing special about the point \\((5,5)\\), thus we can generalise this result for valid paths till \\((n,n)\\), where \\(n \in \mathbb{W}\\) to get the general Catalan number: \\[
 C_n = \frac{1}{n+1} \binom{2n}{n}
 \\]
 
