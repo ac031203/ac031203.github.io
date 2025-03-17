@@ -100,7 +100,7 @@ A Dyck word of length \\(2n\\) is a string consisting of \\(n\\) \\(X\\)'s and \
 
 A natural extension of this problem is to replace \\(X\\)'s with "(" and \\(Y\\)'s with ")", thus also giving us the number of correctly matched expressions containing \\(n\\) pairs of parantheses.
 
-#### Problem 2 : Number of [full binary trees](https://en.wikipedia.org/wiki/Binary_tree#Types_of_binary_trees) with \\(n\\) nodes
+#### Problem 2 : Number of [full binary trees](https://en.wikipedia.org/wiki/Binary_tree#Types_of_binary_trees) with \\(2n+1\\) nodes
 
 This is also a nice counting problem (and difficult too), which one may naturally try solving using recursion (go for it!). Let's try solving this using problem 1. Label each left edge with \\(X\\) and right edge with \\(Y\\), and then do a [dfs](https://en.wikipedia.org/wiki/Depth-first_search), going to the left edge first and then the right one each time, and then you will get a Dyck word of length \\(2n\\). Let's see an example:
 
