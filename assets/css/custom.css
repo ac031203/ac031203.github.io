@@ -201,6 +201,62 @@ body.dark .masthead input[type="search"]::placeholder {
     display: inline;
   }
 
+/* Add to your assets/css/main.scss */
+.subscription-form {
+    margin-bottom: 2em;
+    margin-top: 1em;
+    max-width: 80%;
+    
+    h3 {
+      margin-bottom: 0.5em;
+      font-size: 1em;
+      padding-left: 0;
+      margin-left: 0;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.4em;
+      margin-bottom: 0.4em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 0.8em;
+    }
+    
+    button {
+      width: 100%;
+      font-size: 0.8em;
+      padding: 0.35em;
+    }
+    
+    
+    /* Remove extra padding from the container */
+    & > div {
+      padding: 0.7em;
+    }
+  }
+  
+  /* Specifically target the "Subscribe" heading */
+  .subscription-form h3, 
+  .sidebar h3.subscription-heading {
+    font-size: 0.9em !important;
+  } 
+  
+  /* Adjust the containing box */
+  .sidebar .subscription-form,
+  .sidebar .subscription-form > div {
+    max-width: 230px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  @media (min-width: 64em) {
+    .layout--single {
+      .sidebar {
+        margin-right: 1em;
+      }
+    }
+  }
 
 
 
