@@ -154,10 +154,10 @@ This problem definition, looks very similar to the Dyck words formulation, infac
 
 Now, I have two challenge questions (mail me your solutions), correct solutions (proof required) will get my appreciation and special mention on my next blog:
 
-**_Challenger 1:_** Find the number of \\(n\\)-tuples \\((a_1,a_2,\dots,a_n)\\), \\(a_i \in \mathbb{Z}, a_i \ge 2\\) such that in the sequence \\(a_0a_1a_2 \dots a_na_{n+1}\\),  
+**_Challenge 1:_** Find the number of \\(n\\)-tuples \\((a_1,a_2,\dots,a_n)\\), \\(a_i \in \mathbb{Z}, a_i \ge 2\\) such that in the sequence \\(a_0a_1a_2 \dots a_na_{n+1}\\),  
 \\(a_i \mid (a_{i-1} + a_{i+1}) \, \forall i = 1,2,\dots,n\\). Assume \\(a_0=a_{n+1}=1\\) and \\(p \mid q\\) means \\(p\\) divides \\(q\\).
 
-**_Challenger 2:_** Find the number of \\( n \\)-tuples \\( (a_1, \dots, a_n) \\) of positive integers such that the tridiagonal matrix  
+**_Challenge 2:_** Find the number of \\( n \\)-tuples \\( (a_1, \dots, a_n) \\) of positive integers such that the tridiagonal matrix  
 
 $$
 \begin{bmatrix}
